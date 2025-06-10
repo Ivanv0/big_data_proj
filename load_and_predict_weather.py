@@ -4,12 +4,12 @@ import joblib
 from datetime import datetime
 
 # Загрузка модели и масштабаторов
-model = load_model('models/weather_model.keras')
-x_scaler = joblib.load('models/x.scaler')
-y_scaler = joblib.load('models/y.scaler')
+model = load_model("models/weather_model.keras")
+x_scaler = joblib.load("models/x.scaler")
+y_scaler = joblib.load("models/y.scaler")
 
 # Ввод даты
-input_date_str = input('Введите дату в формате YYYY-mm-dd\n> ') #"2025-07-24"
+input_date_str = input("Введите дату в формате YYYY-mm-dd\n> ")  # "2025-07-24"
 input_date = datetime.strptime(input_date_str, "%Y-%m-%d")
 x_input = np.array([[input_date.year, input_date.month, input_date.day]])
 
@@ -21,7 +21,7 @@ pred_scaled = model.predict(x_scaled)
 prediction = y_scaler.inverse_transform(pred_scaled)[0]
 
 # Названия выходных параметров
-columns = ['avg_temp_c', 'min_temp_c', 'max_temp_c', 'precipitation_mm']
+columns = ["avg_temp_c", "min_temp_c", "max_temp_c", "precipitation_mm"]
 
 # Вывод
 print(f"\nПрогноз погоды на {input_date_str}:")
