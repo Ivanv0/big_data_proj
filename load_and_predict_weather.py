@@ -5,8 +5,8 @@ from datetime import datetime
 
 # Загрузка модели и масштабаторов
 model = load_model('models/weather_model.keras')
-x_scaler = joblib.load('models/x_scaler.save')
-y_scaler = joblib.load('models/y_scaler.save')
+x_scaler = joblib.load('models/x.scaler')
+y_scaler = joblib.load('models/y.scaler')
 
 # Ввод даты
 input_date_str = input('Введите дату в формате YYYY-mm-dd\n> ') #"2025-07-24"

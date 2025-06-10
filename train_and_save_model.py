@@ -73,10 +73,10 @@ f2.legend()
 #fig.savefig('plot.png')
 #os.startfile('plot.png')
 fig.show()
-quit()
+
 # Сохранение масштабатора
-joblib.dump(x_scaler, 'models/x_scaler.save')
-joblib.dump(y_scaler, 'models/y_scaler.save')
+joblib.dump(x_scaler, 'models/x.scaler')
+joblib.dump(y_scaler, 'models/y.scaler')
 # Сохранение модели
 model.save('models/weather_model.keras')
 print("Модель и масштабатор сохранены.")
